@@ -18,6 +18,6 @@ public class BallControll : MonoBehaviour
 
     private void Update()
     {
-        _rb.velocity = new Vector3(1, 0, 0) * ballSpeed;
+
     }
 }

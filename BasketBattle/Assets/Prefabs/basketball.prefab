@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8974896223194516806}
   - component: {fileID: -7887747598407967182}
   - component: {fileID: 1087934766508806696}
+  - component: {fileID: -3176278795134745976}
   m_Layer: 0
   m_Name: basketball
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8974896223196779398}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 3.9059796, y: -1.41, z: 15.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,3 +114,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3176278795134745976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8974896223196779398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90dcd3f7aa3d82245a83399736b77205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballSpeed: 3
