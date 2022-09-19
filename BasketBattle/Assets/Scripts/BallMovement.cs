@@ -18,7 +18,9 @@ public class BallMovement : MonoBehaviour
 
     public float bottomBoundary;
     public float force;
-    
+
+    public GameObject heroParticle;
+    private bool _isParticle = false;
 
     private Rigidbody _rb;
     private Collider _collider;
@@ -57,6 +59,7 @@ public class BallMovement : MonoBehaviour
             ForcePlayer();
             ResetStrip();
             lineRenderer.gameObject.SetActive(false);
+            _isParticle = true;
         }
     }
     
@@ -106,9 +109,17 @@ public class BallMovement : MonoBehaviour
 
     private void SetTransform()
     {
+        if (_isParticle)
+        {
+            heroParticle.transform.position = ballPelvis.position;
+            heroParticle.gameObject.SetActive(true);
+            heroParticle.gameObject.GetComponent<ParticleSystem>().Play();
+        }
+
         rightHand.position = ballRight.position;
         leftHand.position = ballLeft.position;
         pelvis.position = ballPelvis.position;
+        _isParticle = false;
     }
 
     private void ForcePlayer()
