@@ -34,6 +34,7 @@ public class BallMovement : MonoBehaviour
         lineRenderer.positionCount = 2;
         lineRenderer.gameObject.SetActive(false);
         heroRb.useGravity = true;
+        SetTransform();
     }
 
     private void Update()
