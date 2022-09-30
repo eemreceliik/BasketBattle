@@ -26,6 +26,7 @@ public class BallMovement : MonoBehaviour
     private Collider _collider;
 
     public Rigidbody heroRb;
+    private bool isCatch;
     private void Start()
     {
         heroRb = heroRb.gameObject.GetComponent<Rigidbody>();
@@ -49,6 +50,7 @@ public class BallMovement : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
+            isCatch = true;
             SetTransform();
             SetMousePosition();
             SetVelocity();
@@ -56,6 +58,7 @@ public class BallMovement : MonoBehaviour
         }
         if(Input.GetMouseButtonUp(0))
         {
+            isCatch = false;
             Shoot();
             ForcePlayer();
             ResetStrip();
@@ -63,7 +66,14 @@ public class BallMovement : MonoBehaviour
             _isParticle = true;
         }
     }
-    
+
+    private void FixedUpdate()
+    {
+        if(isCatch) return;
+        Vector3 gravity =  -0.5f* Vector3.up;
+        _rb.AddForce(gravity, ForceMode.Acceleration);
+    }
+
 
     private void ResetStrip()
     {

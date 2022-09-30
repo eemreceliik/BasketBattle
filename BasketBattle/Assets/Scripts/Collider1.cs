@@ -14,8 +14,15 @@ public class Collider1 : MonoBehaviour
         if (other.CompareTag($"Ball"))
         {
             collider2.gameObject.GetComponent<GameManager>().isTouch=true;
+            Invoke(nameof(Test),0.5f);
 
         }
+
+    }
+
+    private void Test()
+    {
+        collider2.gameObject.GetComponent<GameManager>().isTouch=false;
 
     }
 }
